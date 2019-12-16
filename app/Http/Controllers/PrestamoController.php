@@ -49,10 +49,6 @@ class PrestamoController extends Controller
 
     private function saveDetallePrestamo($prestamo, $activoIds){
         $prestamo->detallePrestamo()->delete();
-        /*dd( $prestamo->detallePrestamo );
-        foreach($prestamo->detallePrestamo as $detallePrestamo){
-            $detallePrestamo->delete();
-        }*/
         foreach($activoIds as $idActivo){
             DetallePrestamo::create([
                 'idPrestamo' => $prestamo->idPrestamo,

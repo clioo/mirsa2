@@ -32,7 +32,7 @@ class UsuarioController extends Controller
     }
 
     public function delete($idUser){
-        $user = User::findOrFail($idUser);
+        $user = User::find($idUser);
         if(!$user)
             return response()->json('Not found', 404);
         $user->delete();
