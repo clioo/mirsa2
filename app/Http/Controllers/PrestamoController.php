@@ -39,6 +39,10 @@ class PrestamoController extends Controller
         return response()->json(Prestamo::with('detallePrestamo.activos')->find($idPrestamo));
     }
 
+    public function getall(){
+        return response()->json(Prestamo::with('detallePrestamo.activos')->all());
+    }
+
     public function delete($idPrestamo){
         $prestamo = Prestamo::find($idPrestamo);
         if(!$prestamo)

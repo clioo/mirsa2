@@ -20,12 +20,14 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     //prestamos
     $router->post('prestamo', ['uses' => 'PrestamoController@create']);
     $router->put('prestamo/{id}/edit',  ['uses' => 'PrestamoController@update']);
+    $router->get('prestamo', ['uses' => 'PrestamoController@getall']);
     $router->get('prestamo/{id}',  ['uses' => 'PrestamoController@show']);
     $router->get('prestamo/{id}/delete',  ['uses' => 'PrestamoController@delete']);
 
     //activos
     $router->post('activo', ['uses' => 'ActivoController@create']);
     $router->put('activo/{id}/edit',  ['uses' => 'ActivoController@update']);
+    $router->get('activo', ['uses' => 'ActivoController@getall']);
     $router->get('activo/{id}',  ['uses' => 'ActivoController@show']);
     $router->get('activo/{id}/delete',  ['uses' => 'ActivoController@delete']);
 });

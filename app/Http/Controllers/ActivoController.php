@@ -26,6 +26,10 @@ class ActivoController extends Controller
         return response()->json(Activo::find($idActivo));
     }
 
+    public function getall(){
+        return response()->json(Activo::all());
+    }
+
     public function delete($idActivo){
         $activo = Activo::find($idActivo);
         if(!$activo)
