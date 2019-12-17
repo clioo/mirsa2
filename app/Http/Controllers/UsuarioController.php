@@ -31,6 +31,16 @@ class UsuarioController extends Controller
         return response()->json(User::find($idUser));
     }
 
+    public function getall(){
+        return response()->json(User::all());
+    }
+
+    public function getusuario($email, $password){
+        return response()->json(User::where('email', '=', $email)
+                                    ->where('password', '=', $password)
+                                    ->get());
+    }
+
     public function delete($idUser){
         $user = User::find($idUser);
         if(!$user)
